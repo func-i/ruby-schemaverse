@@ -1,0 +1,3 @@
+adapter: postgresql
+host: db.schemaverse.com
+database: schemaverse
