@@ -1,15 +1,16 @@
 raise "Username and Password Required" unless ARGV[0] && ARGV[1]
+load('config/initializers/schemaverse.rb')
 
-require 'rubygems'
-require 'active_record'
+new_ship = MyShip.create!(
+  :name => "A New Ship",
+  :attack => 5,
+  :defense => 5,
+  :engineering => 5,
+  :prospecting => 5
+)
 
-require 'yaml'
-dbconfig = YAML::load(File.open('config/database.yml'))
-ActiveRecord::Base.establish_connection(dbconfig.merge(:username => ARGV[0], :password => ARGV[1]))
+#new_ship.upgrade('MAX_HEALTH', 5)
 
-require_relative 'planet'
+MyShip.mine_all_planets
 
-p = Planet.first
-p.attributes.each_pair do |key, value|
-  puts "#{key} => #{value}"
-end
+raise Planet.my_planets.inspect
