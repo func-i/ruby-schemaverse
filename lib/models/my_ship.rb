@@ -20,16 +20,16 @@ class MyShip < ActiveRecord::Base
     self.class.select("REFUEL_SHIP(#{self.id})").all
   end
   
-  def attack(shipID)
-    self.class.select("ATTACK(#{self.id}, #{shipID})").all
+  def attack(ship_id)
+    self.class.select("ATTACK(#{self.id}, #{ship_id})").all
   end    
 
-  def repair(shipID)
-    self.class.select("REPAIR(#{self.id}, #{shipID})").all
+  def repair(ship_id)
+    self.class.select("REPAIR(#{self.id}, #{ship_id})").all
   end
   
-  def mine(planetID)
-    self.class.select("MINE(#{self.id}, #{planetID})").all
+  def mine(planet_id)
+    self.class.select("MINE(#{self.id}, #{planet_id})").all
   end
   
 end
