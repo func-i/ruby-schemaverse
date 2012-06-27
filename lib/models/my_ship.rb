@@ -15,5 +15,21 @@ class MyShip < ActiveRecord::Base
   def upgrade(attribute, amount)
     self.class.select("UPGRADE(#{self.id}, #{attribute}, #{amount})").all
   end
+  
+  def refuel_ship()
+    self.class.select("REFUEL_SHIP(#{self.id})").all
+  end
+  
+  def attack(shipID)
+    self.class.select("ATTACK(#{self.id}, #{shipID})").all
+  end    
 
+  def repair(shipID)
+    self.class.select("REPAIR(#{self.id}, #{shipID})").all
+  end
+  
+  def mine(planetID)
+    self.class.select("MINE(#{self.id}, #{planetID})").all
+  end
+  
 end
