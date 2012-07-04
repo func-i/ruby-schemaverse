@@ -13,14 +13,14 @@ class MyShip < ActiveRecord::Base
   end
 
   def upgrade(attribute, amount)
-    self.class.select("UPGRADE(#{self.id}, #{attribute}, #{amount})").all
+    self.class.select("UPGRADE(#{self.id}, '#{attribute}', #{amount})").all
   end
   
   def refuel_ship()
     self.class.select("REFUEL_SHIP(#{self.id})").all
   end
   
-  def attack(ship_id)
+  def commence_attack(ship_id)
     self.class.select("ATTACK(#{self.id}, #{ship_id})").all
   end    
 
@@ -30,6 +30,12 @@ class MyShip < ActiveRecord::Base
   
   def mine(planet_id)
     self.class.select("MINE(#{self.id}, #{planet_id})").all
+  end
+
+  def course_control(speed, direction = nil, destination = nil)
+    dest = destination.nil? ? "NULL" : "POINT(#{destination})"
+    dir = direction.nil? ? "NULL" : direction
+    self.class.select("SHIP_COURSE_CONTROL(#{self.id}, #{speed}, #{dir}, #{dest})").all
   end
   
 end
