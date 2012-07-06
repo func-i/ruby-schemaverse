@@ -9,4 +9,8 @@ class MyPlayer < ActiveRecord::Base
     self.class.select("CONVERT_RESOURCE('MONEY', #{amount})").all
   end
 
+  def total_resources
+    self.balance + self.fuel_reserve
+  end
+
 end
