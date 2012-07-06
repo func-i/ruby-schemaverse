@@ -97,16 +97,18 @@ class Schemaverse
           :location => planet.location
         )
 
-        ship = ship.reload
-        ship.update_attributes(:action => "MINE", :action_target_id => closest_planet.id)
-        @my_player.convert_fuel_to_money((total_cost - @my_player.balance).ceil) if @my_player.balance < total_cost
-        upgrade_amount = closest_planet.distance.to_f.ceil > @max_ship_fuel - ship.max_fuel ? @max_ship_fuel - ship.max_fuel : closest_planet.distance.to_f.ceil
-        ship.upgrade("MAX_FUEL", upgrade_amount.to_i)
-        ship.upgrade("MAX_SPEED", (upgrade_amount / 2).to_i)
-        ship.refuel_ship
-        ship = ship.reload
-        puts "Sending ship"
-        ship.course_control((closest_planet.distance.to_f / 2).ceil, nil, closest_planet.location)
+        if ship.id?
+          ship = ship.reload
+          ship.update_attributes(:action => "MINE", :action_target_id => closest_planet.id)
+          @my_player.convert_fuel_to_money((total_cost - @my_player.balance).ceil) if @my_player.balance < total_cost
+          upgrade_amount = closest_planet.distance.to_f.ceil > @max_ship_fuel - ship.max_fuel ? @max_ship_fuel - ship.max_fuel : closest_planet.distance.to_f.ceil
+          ship.upgrade("MAX_FUEL", upgrade_amount.to_i)
+          ship.upgrade("MAX_SPEED", (upgrade_amount / 2).to_i)
+          ship.refuel_ship
+          ship = ship.reload
+          puts "Sending ship"
+          ship.course_control((closest_planet.distance.to_f / 2).ceil, nil, closest_planet.location)
+        end
       end
     end
 
