@@ -25,14 +25,15 @@ class Planet < ActiveRecord::Base
   end
 
   def ships
-    MyShip.where(:location_x => self.location_x, :location_y => self.location_y)
+    MyShip.where("location ~= POINT(?)", self.location)
   end
 
   def closest_planet
-    #SELECT planets.location, planets.name, planets.id, planets.location<->my_home.location as distance  FROM planets, planets my_home WHERE NOT my_home.location ~= planets.location and my_home.conqueror_id=2599 ORDER by distance ASC LIMIT 10;
-    self.class.select("id, name, location, planets.location<->POINT('#{self.location}') as distance").
-      where("NOT location ~= POINT(?)", self.location).
-      order("distance ASC").first
+    finder = self.class.select("id, name, location, planets.location<->POINT('#{self.location}') as distance")
+    self.class.my_planets.each do |p|
+      finder = finder.where("NOT location ~= POINT(?)", p.location)
+    end
+    finder.order("distance ASC").first
   end
 
 end
