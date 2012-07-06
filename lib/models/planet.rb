@@ -16,8 +16,8 @@ class Planet < ActiveRecord::Base
     "#{USERNAME}-prime".upcase
   end
 
-  def self.get_new_planet_name
-    next_num = (Planet.my_planets.count + 1).to_s
+  def self.get_new_planet_name(next_num = nil)
+    next_num ||= (Planet.my_planets.count + 1).to_s
     greek_alpha = %w{ alpha beta gamma delta epsilon zeta eta theta iota kappa lambda mu nu xi omicron pi rho sigma tau upsilon phi chi psi omega}
     n = "#{USERNAME}-#{greek_alpha[next_num[0].to_i - 1]}"
     n += "-#{next_num[1..next_num.size]}" if next_num.size > 1

@@ -2,6 +2,8 @@ class MyShip < ActiveRecord::Base
 
   self.primary_key = 'id'
   has_many :planets_in_range, :foreign_key => "ship"
+  has_many :ships_in_range, :foreign_key => "ship_in_range_of"
+
 
   def self.mine_all_planets
     sql = "UPDATE my_ships SET
