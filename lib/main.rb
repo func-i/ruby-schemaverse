@@ -48,8 +48,10 @@ class Schemaverse
           :location => planet.location
         )
 
-        ship = ship.reload
-        ship.update_attributes(:action => "MINE", :action_target_id => planet.id)
+        if ship.id?
+          ship = ship.reload
+          ship.update_attributes(:action => "MINE", :action_target_id => planet.id)
+        end
 
         puts "Created a ship for #{planet.name}"
         break if planet.ships.size >= 30
