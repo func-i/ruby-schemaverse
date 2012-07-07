@@ -1,4 +1,3 @@
-#
 class Schemaverse
   def initialize
     if Planet.where(:name => Planet.my_home_name).empty?
