@@ -129,7 +129,7 @@ class Schemaverse
   end
 end
 
-raise "Username and Password Required" unless ARGV[0] && ARGV[1]
+#raise "Username and Password Required" unless ARGV[0] && ARGV[1]
 load('config/initializers/schemaverse.rb')
 
 Schemaverse.new.play
