@@ -25,7 +25,12 @@ class Schemaverse
         end
 
         Planet.my_planets.each do |planet|
-          conquer_planet(planet)
+          begin
+	   conquer_planet(planet)
+          rescue Exception => e
+            # Row locking was occurring on mass upgrading
+            puts e.message
+          end
         end
 
         # Ships that are out of fuel that haven't reached their destination
