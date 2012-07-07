@@ -7,13 +7,13 @@ This also assumes you have registered with Heroku (http://www.heroku.com) and yo
 
 Usage (Deployed to Heroku):
 
-  git clone git://github.com/func-i/ruby-schemaverse.git ruby-schemaverse
-  cd ruby-schemaverse
-  heroku create
+  git clone git://github.com/func-i/ruby-schemaverse.git ruby-schemaverse  
+  cd ruby-schemaverse  
+  heroku create  
 
-  heroku config:add SCHEMAVERSE_USERNAME=<username>
-  heroku config:add DATABASE_URL=postgres://<username>:<password>@db.schemaverse.com/schemaverse
+  heroku config:add SCHEMAVERSE_USERNAME=<username>  
+  heroku config:add DATABASE_URL=postgres://<username>:<password>@db.schemaverse.com/schemaverse  
   
-  git push heroku master
+  git push heroku master  
 
-  heroku ps:scale worker=1
+  heroku ps:scale worker=1  
