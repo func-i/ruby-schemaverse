@@ -25,7 +25,12 @@ class Schemaverse
         end
 
         Planet.my_planets.each do |planet|
-          conquer_planet(planet)
+          begin
+	   conquer_planet(planet)
+          rescue Exception => e
+            # Row locking was occurring on mass upgrading
+            puts e.message
+          end
         end
 
         # Ships that are out of fuel that haven't reached their destination
@@ -129,7 +134,7 @@ class Schemaverse
   end
 end
 
-raise "Username and Password Required" unless ARGV[0] && ARGV[1]
+raise "Username and Password Required" unless (ARGV[0] && ARGV[1]) || (ENV['DATABASE_URL'] && ENV['SCHEMAVERSE_USERNAME'])
 load('config/initializers/schemaverse.rb')
 
 Schemaverse.new.play
