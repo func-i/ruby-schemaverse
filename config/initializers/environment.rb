@@ -4,16 +4,19 @@ require 'yaml'
 
 
 if ENV['DATABASE_URL'].nil?
-	dbconfig = YAML::load(File.open('config/database.yml'))
+	db_config = YAML::load(File.open('config/database.yml'))
 
-	USERNAME, PASSWORD = ARGV[0], ARGV[1]
   unless ENV['ENV'] == 'test'
-    connection_information = dbconfig['production'].merge(:username => USERNAME, :password => PASSWORD)
+    USERNAME, PASSWORD = ARGV[0], ARGV[1]
   else
-    connection_information = dbconfig['test']
+    test_config = YAML::load(File.open('config/test.yml'))
+    USERNAME = test_config['username']
+    PASSWORD = test_config['password']
   end
 
-	ActiveRecord::Base.establish_connection(connection_information)
+  db_config.merge!(:username => USERNAME, :password => PASSWORD)
+
+	ActiveRecord::Base.establish_connection(db_config)
 else
 	USERNAME = ENV['SCHEMAVERSE_USERNAME']
 	ActiveRecord::Base.establish_connection(ENV["DATABASE_URL"])
