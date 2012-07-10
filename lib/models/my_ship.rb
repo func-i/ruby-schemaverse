@@ -4,8 +4,8 @@ class MyShip < ActiveRecord::Base
   has_many :planets_in_range, :foreign_key => "ship"
   has_many :ships_in_range, :foreign_key => "ship_in_range_of"
 
-
   def self.mine_all_planets
+    # TODO: This doesn't work
     sql = "UPDATE my_ships SET
 		  action='MINE',
 		  action_target_id=planets_in_range.planet
@@ -14,20 +14,13 @@ class MyShip < ActiveRecord::Base
     ActiveRecord::Base.connection.update_sql(sql)
   end
 
-  def self.get_new_ship_name
-    next_num = (MyShip.where("name LIKE ?", "%armada-%").size + 1).to_s
-    colour_codes = %w{ red orange yellow green blue indigo violet black brown}
-    n = "#{USERNAME}-armada-#{colour_codes[next_num[0].to_i - 1]}"
-    if next_num.size > 1
-      n += "-#{next_num[1..next_num.size]}"
-    else
-      n += "-LEADER"
-    end
-    n.capitalize
-  end
-
   def upgrade(attribute, amount)
-    self.class.select("UPGRADE(#{self.id}, '#{attribute}', #{amount})").where(:id => self.id).first
+    val = self.class.select("UPGRADE(#{self.id}, '#{attribute}', #{amount})").where(:id => self.id).first.attributes
+    if val["upgrade"] == 't'
+      self.send("#{attribute.downcase}=", self.send("#{attribute.downcase}") + amount)
+      return true
+    end
+    return false
   end
 
   def refuel_ship()
@@ -49,7 +42,13 @@ class MyShip < ActiveRecord::Base
   def course_control(speed, direction = nil, destination = nil)
     dest = destination.nil? ? "NULL" : "POINT('#{destination}')"
     dir = direction.nil? ? "NULL" : direction
-    self.class.select("SHIP_COURSE_CONTROL(#{self.id}, #{speed}, #{dir}, #{dest})").where(:id => self.id).first
+    val = self.class.select("SHIP_COURSE_CONTROL(#{self.id}, #{speed}, #{dir}, #{dest})").where(:id => self.id).first.attributes
+    if val["ship_course_control"] == 't'
+      self.destination = destination
+      self.max_speed = speed
+      return true
+    end
+    return false
   end
 
 end
