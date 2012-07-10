@@ -1,2 +1,3 @@
 nbproject/*
 .idea/*
+config/database.yml
