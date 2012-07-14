@@ -11,6 +11,12 @@ For the public database you can register at http://schemaverse.com.
 
 This also assumes you have registered with Heroku (http://www.heroku.com) and you have downloaded their Heroku Toolbelt (https://toolbelt.herokuapp.com)
 
+Documentation
+--------------------------------
+
+You can view the documentation [here](http://www.rubydoc.info/github/func-i/ruby-schemaverse/master/frames)
+
+
 Usage (Deployed to Heroku):
 -----------------------------
 
