@@ -1,0 +1,687 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: Planet
+  
+    &mdash; Documentation by YARD 0.7.2
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '';
+  if (relpath != '') relpath += '/';
+</script>
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (P)</a> &raquo; 
+    
+    
+    <span class="title">Planet</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a id="class_list_link" href="#">Class List</a>
+  
+    <a id="method_list_link" href="#">Method List</a>
+  
+    <a id="file_list_link" href="#">File List</a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Class: Planet
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">ActiveRecord::Base</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">ActiveRecord::Base</li>
+          
+            <li class="next">Planet</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/models/planet.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+  
+
+
+  
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_new_planet_name-class_method" title="get_new_planet_name (class method)">+ (String) <strong>get_new_planet_name</strong>(next_num = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Get a new name for a planet This is just me messing around.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#home-class_method" title="home (class method)">+ (Planet) <strong>home</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Finds the planet with the name that matches the return value from
+#my_home_name.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#my_home_name-class_method" title="my_home_name (class method)">+ (String) <strong>my_home_name</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Set a default name for your home planet.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#not_home-class_method" title="not_home (class method)">+ (Array) <strong>not_home</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+All planets that are not your home planet.
+</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#closest_planet-instance_method" title="#closest_planet (instance method)">- (Planet) <strong>closest_planet</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Find the closest planet to this planet.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ships-instance_method" title="#ships (instance method)">- (Array) <strong>ships</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+A scope that finds ships with a location at this planet.
+</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="get_new_planet_name-class_method">
+  
+    + (<tt>String</tt>) <strong>get_new_planet_name</strong>(next_num = nil) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Get a new name for a planet This is just me messing around.  Thought it
+would be kind of cool to have names for all my planets.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>next_num</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The next sequential planet number
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+A string with the name for a new planet
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+30
+31
+32
+33
+34
+35
+36</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/models/planet.rb', line 30</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id get_new_planet_name'>get_new_planet_name</span><span class='lparen'>(</span><span class='id next_num'>next_num</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='id next_num'>next_num</span> <span class='op'>||=</span> <span class='lparen'>(</span><span class='const'>Planet</span><span class='period'>.</span><span class='id my_planets'>my_planets</span><span class='period'>.</span><span class='id count'>count</span> <span class='op'>+</span> <span class='int'>1</span><span class='rparen'>)</span><span class='period'>.</span><span class='id to_s'>to_s</span>
+  <span class='id greek_alpha'>greek_alpha</span> <span class='op'>=</span> <span class='qwords_beg'>%w{ </span><span class='tstring_content'>alpha</span><span class='words_sep'> </span><span class='tstring_content'>beta</span><span class='words_sep'> </span><span class='tstring_content'>gamma</span><span class='words_sep'> </span><span class='tstring_content'>delta</span><span class='words_sep'> </span><span class='tstring_content'>epsilon</span><span class='words_sep'> </span><span class='tstring_content'>zeta</span><span class='words_sep'> </span><span class='tstring_content'>eta</span><span class='words_sep'> </span><span class='tstring_content'>theta</span><span class='words_sep'> </span><span class='tstring_content'>iota</span><span class='words_sep'> </span><span class='tstring_content'>kappa</span><span class='words_sep'> </span><span class='tstring_content'>lambda</span><span class='words_sep'> </span><span class='tstring_content'>mu</span><span class='words_sep'> </span><span class='tstring_content'>nu</span><span class='words_sep'> </span><span class='tstring_content'>xi</span><span class='words_sep'> </span><span class='tstring_content'>omicron</span><span class='words_sep'> </span><span class='tstring_content'>pi</span><span class='words_sep'> </span><span class='tstring_content'>rho</span><span class='words_sep'> </span><span class='tstring_content'>sigma</span><span class='words_sep'> </span><span class='tstring_content'>tau</span><span class='words_sep'> </span><span class='tstring_content'>upsilon</span><span class='words_sep'> </span><span class='tstring_content'>phi</span><span class='words_sep'> </span><span class='tstring_content'>chi</span><span class='words_sep'> </span><span class='tstring_content'>psi</span><span class='words_sep'> </span><span class='tstring_content'>omega</span><span class='words_sep'>}</span>
+  <span class='id n'>n</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='const'>USERNAME</span><span class='rbrace'>}</span><span class='tstring_content'>-</span><span class='embexpr_beg'>#{</span><span class='id greek_alpha'>greek_alpha</span><span class='lbracket'>[</span><span class='id next_num'>next_num</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id to_i'>to_i</span> <span class='op'>-</span> <span class='int'>1</span><span class='rbracket'>]</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id n'>n</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>-</span><span class='embexpr_beg'>#{</span><span class='id next_num'>next_num</span><span class='lbracket'>[</span><span class='int'>1</span><span class='op'>..</span><span class='id next_num'>next_num</span><span class='period'>.</span><span class='id size'>size</span><span class='rbracket'>]</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id next_num'>next_num</span><span class='period'>.</span><span class='id size'>size</span> <span class='op'>&gt;</span> <span class='int'>1</span>
+  <span class='id n'>n</span><span class='period'>.</span><span class='id capitalize'>capitalize</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="home-class_method">
+  
+    + (<tt><span class='object_link'><a href="" title="Planet (class)">Planet</a></span></tt>) <strong>home</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Finds the planet with the name that matches the return value from
+#my_home_name
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Planet (class)">Planet</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+Your home planet
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+9
+10
+11</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/models/planet.rb', line 9</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id home'>home</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id where'>where</span><span class='lparen'>(</span><span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='kw'>self</span><span class='period'>.</span><span class='id my_home_name'>my_home_name</span><span class='rparen'>)</span><span class='period'>.</span><span class='id first'>first</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="my_home_name-class_method">
+  
+    + (<tt>String</tt>) <strong>my_home_name</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Set a default name for your home planet
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+Your home planet&#8217;s name
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+22
+23
+24</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/models/planet.rb', line 22</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id my_home_name'>my_home_name</span>
+  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='const'>USERNAME</span><span class='rbrace'>}</span><span class='tstring_content'>-prime</span><span class='tstring_end'>&quot;</span></span><span class='period'>.</span><span class='id upcase'>upcase</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="not_home-class_method">
+  
+    + (<tt>Array</tt>) <strong>not_home</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+All planets that are not your home planet. Home planet&#8217;s name is
+determined by #my_home_name
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+An ActiveRecord scope which can be used to chain finders.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+16
+17
+18</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/models/planet.rb', line 16</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id not_home'>not_home</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id where'>where</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>name &lt;&gt; ?</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='kw'>self</span><span class='period'>.</span><span class='id my_home_name'>my_home_name</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="closest_planet-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="Planet (class)">Planet</a></span></tt>) <strong>closest_planet</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Find the closest planet to this planet.  It will look for planets that are
+close via distance and that do not have a ship travelling to that location.
+This is helpful for expanding to new planets that you have not conquered or
+are travelling to.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Planet (class)">Planet</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The closest planet that you do not own or are travelling to.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+48
+49
+50
+51
+52
+53
+54</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/models/planet.rb', line 48</span>
+
+<span class='kw'>def</span> <span class='id closest_planet'>closest_planet</span>
+  <span class='id finder'>finder</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id class'>class</span><span class='period'>.</span><span class='id select'>select</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>id, name, location, planets.location&lt;-&gt;POINT('</span><span class='embexpr_beg'>#{</span><span class='kw'>self</span><span class='period'>.</span><span class='id location'>location</span><span class='rbrace'>}</span><span class='tstring_content'>') as distance</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id class'>class</span><span class='period'>.</span><span class='id my_planets'>my_planets</span><span class='period'>.</span><span class='id each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id p'>p</span><span class='op'>|</span>
+    <span class='id finder'>finder</span> <span class='op'>=</span> <span class='id finder'>finder</span><span class='period'>.</span><span class='id where'>where</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>NOT location ~= POINT(?)</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id p'>p</span><span class='period'>.</span><span class='id location'>location</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+  <span class='id finder'>finder</span><span class='period'>.</span><span class='id order'>order</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>distance ASC</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id first'>first</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="ships-instance_method">
+  
+    - (<tt>Array</tt>) <strong>ships</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+A scope that finds ships with a location at this planet
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+ActiveRecord scope that can be used with additional finders or iterated
+through
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+40
+41
+42</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/models/planet.rb', line 40</span>
+
+<span class='kw'>def</span> <span class='id ships'>ships</span>
+  <span class='const'>MyShip</span><span class='period'>.</span><span class='id where'>where</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>location ~= POINT(?)</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='kw'>self</span><span class='period'>.</span><span class='id location'>location</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Fri Jul 13 22:51:11 2012 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.7.2 (ruby-1.9.2).
+</div>
+
+  </body>
+</html>

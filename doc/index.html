@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>
+  File: README
+  
+    &mdash; Documentation by YARD 0.7.2
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '';
+  if (relpath != '') relpath += '/';
+</script>
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html" title="Index">Index</a> &raquo; 
+    <span class="title">File: README</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a id="class_list_link" href="#">Class List</a>
+  
+    <a id="method_list_link" href="#">Method List</a>
+  
+    <a id="file_list_link" href="#">File List</a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><div id='filecontents'><h1>Heroku ruby-schemaverse</h1>
+
+<p>A ruby wrapper for the game Schemaverse created by Abstrct, written by Sailias.</p>
+
+<p>The Schemaverse is a space-based strategy game implemented entirely within a PostgreSQL database. Compete against other players using raw SQL commands to command your fleet. Or, if your PL/pgSQL-foo is strong, wield it to write AI and have your fleet command itself!
+Come to #Schemaverse on irc.freenode.net if you are looking for some help or friendly banter.</p>
+
+<p>To play you must be a registered user on the database you are connecting to. <br/>
+For the public database you can register at <a href="http://schemaverse.com.">http://schemaverse.com.</a></p>
+
+<p>This also assumes you have registered with Heroku (<a href="http://www.heroku.com">http://www.heroku.com</a>) and you have downloaded their Heroku Toolbelt (<a href="https://toolbelt.herokuapp.com">https://toolbelt.herokuapp.com</a>)</p>
+
+<h2>Usage (Deployed to Heroku):</h2>
+
+<p>  git clone git://github.com/func-i/ruby-schemaverse.git ruby-schemaverse<br/>
+  cd ruby-schemaverse<br/>
+  heroku create</p>
+
+<p>  heroku config:add SCHEMAVERSE_USERNAME=&lt;username&gt;<br/>
+  heroku config:add DATABASE_URL=postgres://&lt;username&gt;:&lt;password&gt;@db.schemaverse.com/schemaverse</p>
+
+<p>  git push heroku master</p>
+
+<p>  heroku ps:scale worker=1</p>
+
+<h2>Testing</h2>
+
+<p>Uses RSpec to test the functions inside Schemaverse and their return functions.  Unfortunately the easiest way to test
+this is by connecting as a user.  This will eventually be changed and the functionality will be stubbed out.</p>
+
+<h3>Create a test.yml file</h3>
+
+<p>Copy and rename the test.yml.example file and populate it with your or a fake account's credentials.  This file is ignored in the .gitignore
+so don't worry about committing it.</p>
+
+<h3>Run a test</h3>
+
+<p>Like any other rspec test</p>
+
+<blockquote><p>rspec spec/models/my_player_spec.rb</p></blockquote>
+
+<p>Feel free to enhance the tests and submit pull requests.</p>
+</div></div>
+    
+    <div id="footer">
+  Generated on Fri Jul 13 22:51:11 2012 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.7.2 (ruby-1.9.2).
+</div>
+
+  </body>
+</html>
